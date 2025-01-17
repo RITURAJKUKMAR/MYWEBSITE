@@ -1,0 +1,38 @@
+{% extends 'master.html' %}
+
+{% block menu %}
+<a href="{% url 'GWG:home' %}">Home</a>
+<a href="{% url 'GWG:logout' %}">Logout</a>
+<div>
+    <a href="{% url 'GWG:profile' %}">Hi<div class="profile">{{request.session.firstLetter | upper}}</div></a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="textSlid">
+    <mARquee>
+        <font size="8">
+            <B>Welcome to Grow With Grades</B>
+        </font>
+    </mARquee>
+</div>
+
+<br>
+
+<div id='report'>
+    {% if userStatus == 1 %}
+    <span id="questionStatus">Delete User Successfully.</span>
+    {% elif userStatus == 2 %}
+    <span id="questionStatus">Did not match UserName.</span>
+    {% endif %}
+    <form action="{% url 'GWG:deleteUser' %}" method="post">
+        {% csrf_token %}
+        <label for="username">UserName :</label>
+        <input type="text" name="username" placeholder="UserName" required>
+        <input type="submit" value="Delete">
+        <input type="reset" value="reset">
+    </form>
+</div>
+
+{% endblock %}

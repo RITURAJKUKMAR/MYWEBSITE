@@ -1,0 +1,52 @@
+.table {
+    margin: 20px auto;
+    margin-bottom: 60px;
+}
+
+
+.table {
+    width: 90%;
+    margin-bottom: 60px;
+}
+
+.table tr:nth-child(odd) {
+    background-color: #456705;
+    color: white;
+    height: 30px;
+}
+
+.table tr:nth-child(even) {
+    background-color: #AFD275;
+    height: 30px;
+}
+
+.table tr:first-child {
+    background-color: #F64C72;
+}
+
+.table td {
+    text-align: center;
+}
+
+
+.special {
+    color: #456705;
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+#report {
+    /* background-color: red; */
+    margin: 10px auto;
+    width: 90%;
+    text-align: center;
+
+    p {
+        font-size: 20px;
+    }
+}
+
+#question-Q{
+    width: 200px;
+}

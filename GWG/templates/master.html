@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{% static 'icon.png' %}">
+    <title>GROW WITH GRADES{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <link rel="stylesheet" href="{% static 'registration.css' %}">
+    <link rel="stylesheet" href="{% static 'profile.css' %}">
+    <link rel="stylesheet" href="{% static 'table.css' %}">
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+    <link rel="stylesheet" href="{% static 'testpaper.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="sitename">
+            <img src="{% static 'logo.png' %}" alt="logo"><h1>GROW WITH GRADES</h1>
+        </div>
+        <div class="menu">
+            {% block menu %}
+
+            {% endblock %}
+        </div>
+    </header>
+
+    <div class="content">
+        {% block content %}
+
+
+        {% endblock %}
+    </div>
+
+    <footer>
+        <p><b>Copyright © 2024 GrowWithGrades.com</b></p>
+    </footer>
+</body>
+
+</html>

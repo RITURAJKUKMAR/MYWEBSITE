@@ -1,0 +1,34 @@
+{% extends 'master.html' %}
+
+{% block menu %}
+<a href="{% url 'GWG:welcome' %}">Home</a>
+<a href="{% url 'GWG:aboutus' %}">About</a>
+<a href="{% url 'GWG:registrationForm' %}">Register</a>
+<a href="{% url 'GWG:login' %}">Login</a>
+{% endblock %}
+
+{% block content %}
+
+{% if userStatus  == 1 %}
+<div class='form'>
+<div class="userStatus">
+    Sorry, username already, please try different username.
+    <a href="{% url 'GWG:registrationForm' %}">Black to Registration form</a>
+</div>
+
+{% elif userStatus == 2 %}
+<div class="userStatus">
+    Congratulation!! , User created successfully
+    <a href="{% url 'GWG:login' %}">Login</a>
+</div>
+
+{% elif userStatus == 3 %}
+<div class="userStatus">
+    Opps!! Improper Request
+    <a href="{% url 'GWG:registrationForm' %}">Black to Registration form</a>
+</div>
+</div>
+{% endif %}
+
+
+{% endblock %}

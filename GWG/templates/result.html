@@ -1,0 +1,64 @@
+{% extends 'master.html' %}
+
+{% block menu %}
+<a href="{% url 'GWG:home' %}">Home</a>
+<a href="{% url 'GWG:logout' %}">Logout</a>
+<div>
+    <a href="{% url 'GWG:profile' %}">Hi<div class="profile">{{request.session.firstLetter | upper}}</div></a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="textSlid">
+    <mARquee>
+        <font size="8">
+            <B>Welcome to Grow With Grades</B>
+        </font>
+    </mARquee>
+</div>
+
+<br>
+<div id='report'>
+    <h1> {{ request.session.name | upper}}, your result. </h1>
+</div>
+<br>
+
+<table class="table">
+    <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Attempt</th>
+        <th>Right</th>
+        <th>Wrong</th>
+        <th>Points</th>
+    </tr>
+    {% for r in result %}
+    <tr>
+        <td>{{ r.date }}</td>
+        <td>{{r.time }}</td>
+        <td>{{r.attempt }}</td>
+        <td>{{r.right }}</td>
+        <td>{{r.worng }}</td>
+        <td>{{r.points }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<div class="form">
+
+    {% for q in ques %}
+    <span>Question : </span><p>{{ q.que}}</p><br>
+    <span>Option A : </span><p>{{ q.a}}</p><br>
+    <span>Option B : </span><p>{{ q.b}}</p><br>
+    <span>Option C : </span><p>{{ q.c}}</p><br>
+    <span>Option D : </span><p>{{ q.d}}</p><br>
+    <span>Currect Option : </span><p>{{ q.ans}}</p><br>
+    {% endfor %}
+
+</div>
+
+
+
+
+{% endblock %}

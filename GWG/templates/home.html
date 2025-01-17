@@ -1,0 +1,222 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block menu %}
+<a href="{% url 'GWG:home' %}">Home</a>
+<a href="{% url 'GWG:logout' %}">Logout </a>
+<div>
+    <a href="{% url 'GWG:profile' %}">Hi<div class="profile">{{request.session.firstLetter | upper}}</div></a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="textSlid">
+    <mARquee>
+        <font size="8">
+            <B>Welcome to Grow With Grades</B>
+        </font>
+    </mARquee>
+</div>
+
+<br>
+<div id='report'>
+    <h1>Welcome {{ request.session.name | upper}}, to your home page. </h1>
+</div>
+<br>
+
+{% if request.session.username == 'Rituraj Kumar' or  request.session.username == 'Ritesh Kumar' or  request.session.username == 'Shibu Kumar' %}
+<div class="form">
+
+    <div class="button-link">
+        <a href="{% url 'GWG:setQuestions' %}">Set Question</a>
+    </div>
+    <div class="button-link">
+        <a href="{% url 'GWG:showQuestions' %}">Show All Question</a>
+    </div>
+    <div class="button-link">
+        <a href="{% url 'GWG:deleteQue' %}">Delete Question</a>
+    </div>
+    <div class="button-link">
+        <a href="{% url 'GWG:allProfile' %}">Show All Profile</a>
+    </div>
+    <div class="button-link">
+        <a href="{% url 'GWG:userDetails' %}">Users Details</a>
+    </div>
+    <div class="button-link">
+        <a href="{% url 'GWG:deleteUser' %}">Delete Profile</a>
+    </div>
+</div>
+
+{% endif %}
+<br>
+
+<div class="form">
+    <!-- <div class="button-link">
+        <a href="{% url 'GWG:testPaper' %}?n=1">Test Series 1-1 </a>
+    </div> -->
+    <div class="button-link">
+        <a href="{% url 'GWG:testPaper' %}?n=20">Test Series 20-20 </a>
+    </div>
+    <div class="button-link">
+        <a href="{% url 'GWG:testPaper' %}?n=50">Test Series 50-50</a>
+    </div>
+    <div class="button-link">
+        <a href="{% url 'GWG:showAllResult' %}">Test History</a>
+    </div>
+</div>
+
+
+
+<div class="all-container">
+    <div class="box">
+        <div class="system-img">
+            <div class="teachers">
+                <img src="{% static 'NiteshSir.jpg' %}" alt="NiteshSir">
+                <p><b>Director : - Ritesh Sir</b></p>
+                <p>Contact No. :- 6200718713</p>
+            </div>
+             <div class="teachers">
+                <img src="{% static 'ShibuSir.jpg' %}" alt="NiteshSir">
+                <p>Shibu Sir</p>
+                <p>Subject :- Math</p>
+            </div>
+            <div class="teachers">
+                <img src="{% static 'AmitSir.jpg' %}" alt="NiteshSir">
+                <p>Amit Sir</p>
+                <p>Subject :-Social Science</p>
+            </div>
+            <div class="teachers">
+                <img src="{% static 'NaveenSir.jpg' %}" alt="NiteshSir">
+                <p>Naveen Sir</p>
+                <p>Subject :- Management</p>
+            </div>
+            <div class="teachers">
+                <img src="{% static 'ShubhamSir.jpg' %}" alt="NiteshSir">
+                <p>Shubham Sir</p>
+                <p>Subject :- Science</p>
+            </div>
+        </div>
+        <div class="features">
+            <h2><b> Key Features :</b></h2>
+            <hr>
+            <ol type="1">
+                <li>
+                    <b> Question Banks : </b>
+                    A database of question, often categorized by topics,difficulty level,
+                    of subject, that allows randomization of question to minimize cheating.
+                </li>
+                <li>
+                    <b>Automated Grading : </b>
+                    For multiple-choice or other objective-type questions, answers are
+                    automatically graded, reducing manual effort.
+                </li>
+                <li>
+                    <b>Time Management : </b>
+                    Built-in timers ensure that students complete the exam within a specified duration.
+                </li>
+                <li>
+                    <b>Security : </b>
+                    Many systems include features like browser lockdowns, IP tracking,or AI-based
+                    proctoring to prevent cheating.
+                </li>
+            </ol>
+            <h2><b> Benefits :</b></h2>
+            <hr>
+            <ol type="A">
+                <li>
+                    <b> Convenience : </b>
+                    Students can take exams from anywhere, eliminating the need for physical classrooms.
+                </li>
+                <li>
+                    <b>Cost-Effective : </b>
+                    Reduces costs associated with physical exam centers,paper printing, and invigilation.
+                </li>
+                <li>
+                    <b>Immediate Feedback : </b>
+                    Automated grading allows for instant feedback, especially for objective qustions.
+                </li>
+                <li>
+                    <b>Scalability : </b>
+                    Thousands of students can take exams simulataneously without geographical constraints.
+                </li>
+                <li>
+                    <b>Environmentally Friendly : </b>
+                    Reeduces the use of paper and other physical sources.
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="box">
+        <div class="features">
+            <h2><b>Bihar Board And CBSE Board</b></h2>
+            <ol type="A">
+                <hr>
+                <li>Class :- 8th to 12th</li>
+                <li>Admission start</li>
+                <li>Basic to Advance</li>
+                <li>Hindi Medium And English Medium</li>
+                <li>All Subject</li>
+                <li>Online Classes And Offline Classes</li>
+                <li>Daily Assignment with solution</li>
+                <li>Chapterwise test And Miscellaneous test</li>
+                <li>Daily live test with Solution</li>
+                <li>One Formula book free</li>
+                <li>If any student get above 80% marks then he/she will awarded by Institution.</li>
+            </ol>
+        </div>
+        <div class="features">
+            <h2><b> Online Exam Services :</b></h2>
+            <hr>
+            <ol type="1">
+                <li>
+                    <p>Customizable Exam Creation
+                        Design and implement tests tailored to specific subjects, topics, or learning objectives.
+                        Features include:
+                    </p>
+                </li>
+                <li>
+                    <p>Multiple question types: Multiple Choice, Fill-in-the-Blank, Essay, and True/False.
+                    </p>
+                </li>
+                <li>
+                    <p>Randomized questions and options to prevent cheating.
+                    </p>
+                </li>
+                <li>
+                    <p>Time limits for controlled test environments.
+                    </p>
+                </li>
+                <li>
+                    <p>Automated Evaluation and Grading
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Support for large-scale exams with thousands of participants.</p>
+                </li>
+                <li>
+                    <p>
+                        Exams accessible on desktops, tablets, and smartphones.
+                    </p>
+                </li>
+            </ol>
+            An <b>Online Exam system</b> is a digital platform used to administer test or
+            assessments via the internet.It offers an alternative to traditional paper-based exams,
+            enabling remote access, flexibillity, and automination of the entire
+            examination process. Here are some key features and benefits of an online exam system.
+            <br><br>
+            <b> "TeachBot" </b> typically refers to an AI-driven chatbot or vitual assistant designed to support
+            educational tasks.It can be used in various settings,such as classrooms or online platforms, to
+            assist with teaching,tutoring feedback,or facilitating learing experiences.
+            <br><br>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+{% endblock %}

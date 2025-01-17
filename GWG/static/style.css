@@ -1,0 +1,99 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-bg-color: #003153;
+}
+
+header {
+    width: 100%;
+    background-color: var(--main-bg-color);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .sitename {
+        padding-left: 40px;
+        align-items: center;
+        display: flex;
+    }
+
+    .menu {
+        padding-right: 30px;
+        float: right;
+
+        a {
+            margin: 5px;
+            font-size: 20px;
+            color: white;
+        }
+    }
+}
+
+header img {
+    margin-right: 10px;
+    height: 50px;
+}
+
+footer {
+    background-color: var(--main-bg-color);
+    height: 50px;
+    align-content: center;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+img {
+    cursor: pointer;
+}
+
+.textSlid {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    mARquee {
+        width: 40vw;
+    }
+
+    mARquee font {
+        font-size: 3vw;
+        text-shadow: 0px 0px 5px;
+        color: red;
+    }
+}
+
+.bgimg {
+    margin-top: 20px;
+    background-size: 100%;
+    height: 750px;
+    background-image: url(bgimg.jpg);
+    background-repeat: no-repeat;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+a:hover{
+    transform: scale(1.05);
+}

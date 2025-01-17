@@ -1,0 +1,31 @@
+{% extends 'master.html' %}
+
+{% block menu %}
+<a href="{% url 'GWG:welcome' %}">Home</a>
+<a href="{% url 'GWG:aboutus' %}">About</a>
+<a href="{% url 'GWG:registrationForm' %}">Register</a>
+{% endblock %}
+
+{% block content %}
+<div class="form">
+    <form action="{% url 'GWG:login' %}" method="post">
+        {% csrf_token %}
+        <div class="form-unit">
+            <label for="#username">UserName :</label>
+            <input type="text" name="username" id="username" placeholder="UserName">
+        </div>
+
+        <div class="form-unit">
+            <label for="#password">Password :</label>
+            <input type="password" name="password" id="password" placeholder="Password">
+        </div>
+
+        <div class="form-unit">
+            <input type="reset" value="RESET">
+            <input type="submit" value="SUBMIT">
+        </div>
+    </form>
+   <p style="text-align: center;"> Don't have an Account? <a href="{% url 'GWG:registrationForm' %}"> Register</a></p>
+</div>
+
+{% endblock %}

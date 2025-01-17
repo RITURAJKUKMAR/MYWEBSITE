@@ -1,0 +1,59 @@
+.form {
+    margin: 20px auto;
+    margin-bottom: 60px;
+    width: 50%;
+    /* background-color: green; */
+    text-align: center;
+    justify-items: center;
+
+    p {
+        /* background-color: red; */
+        width: 100%;
+        text-align: left;
+        font-size: 24px;
+    }
+
+    #editbtn {
+        padding: 10px;
+        float: right;
+        text-decoration: none;
+        background-color: black;
+        border-radius: 20px;
+        font-size: 17px;
+        color: white;
+    }
+
+    .userStatus {
+        font-size: 30px;
+
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    .button-link {
+        font-size: 24px;
+        width: 90%;
+        height: 50px;
+        padding: 7px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 1px black solid;
+        border-radius: 10px;
+        background-color: var(--main-bg-color);
+
+        a {
+            color: white;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .form {
+        width: 90%;
+    }
+
+    .bgimg {
+        height: 50vw;
+    }
+}

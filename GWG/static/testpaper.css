@@ -1,0 +1,10 @@
+.time{
+    /* background-color: red; */
+    margin: 10px;
+    font-size: 30px;
+    max-width: 180px;
+    text-align: center;
+    padding: 7px;
+    border: 2px red solid;
+    border-radius: 15px;
+}

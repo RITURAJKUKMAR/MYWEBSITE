@@ -1,0 +1,51 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block menu %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="table">
+    <div class="time">
+        <b id="show-min">{{ questions | length }}</b>
+        <b id="show-colon">:</b>
+        <b id="show-sec">00</b>
+    </div>
+    <div class="time">
+        <b > Total : {{ questions | length }}</b>
+    </div>
+    <form action="{% url 'GWG:caculateTest' %}" method="post">
+        {% csrf_token %}
+        {% for question in questions %}
+        <div class="question">
+            <input type="hidden" name="qno {{question.qid}}" value="{{question.qid}}">
+            {{question.que}}
+        </div>
+        <label for="a{{question.qid}}">
+            <div class="options"> <input type="radio" id="a{{question.qid}}" class="circle" name="q{{question.qid}}"
+                    value="a"> {{question.a}} </div>
+        </label>
+        <label for="b{{question.qid}}">
+            <div class="options"> <input type="radio" id="b{{question.qid}}" class="circle" name="q{{question.qid}}"
+                    value="b"> {{question.b}} </div>
+        </label>
+        <label for="c{{question.qid}}">
+            <div class="options"> <input type="radio" id="c{{question.qid}}" class="circle" name="q{{question.qid}}"
+                    value="c"> {{question.c}} </div>
+        </label>
+        <label for="d{{question.qid}}">
+            <div class="options"> <input type="radio" id="d{{question.qid}}" class="circle" name="q{{question.qid}}"
+                    value="d"> {{question.d}} </div>
+        </label>
+        <br><br>
+        {% endfor %}
+        <div><input type="reset" value="Reset"></div>
+        <div><input type="submit" id="sub" value="Submit"></div>
+    </form>
+</div>
+
+<script src="{% static 'app.js' %}"></script>
+{% endblock %}

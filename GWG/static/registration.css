@@ -1,0 +1,38 @@
+form {
+    font-size: 20px;
+    margin-bottom: 60px;
+    /* background-color: green; */
+
+    input {
+        width: 150px;
+        height: 30px;
+        padding: 5px;
+        border-radius: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .circle {
+        height: 15px;
+        width: 15px;
+    }
+    
+    .options {
+        max-width: 500px;
+        margin-top: 10px;
+        /* background-color: red; */
+        padding-left: 10px;
+        border: 1px black solid;
+        border-radius: 10px;
+    }
+    
+}
+
+table tr td {
+    margin: 10px auto 10px 0;
+}
+
+input {
+    outline: none;
+    border: 1px gray solid;
+}

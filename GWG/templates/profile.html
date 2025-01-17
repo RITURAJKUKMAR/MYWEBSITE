@@ -1,0 +1,39 @@
+{% extends 'master.html' %}
+
+{% block menu %}
+<a href="{% url 'GWG:home' %}">Home</a>
+<a href="{% url 'GWG:logout' %}">Logout</a>
+<div>
+    <a href="{% url 'GWG:profile' %}">Hi<div class="profile">{{request.session.firstLetter | upper}}</div></a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="textSlid">
+    <mARquee>
+        <font size="8">
+            <B>Welcome to Grow With Grades</B>
+        </font>
+    </mARquee>
+</div>
+
+<br>
+
+<div class="form">
+    <h1> {{ request.session.name | upper}}, your profile page. </h1><br>
+   <p> <a href="{% url 'GWG:editProfile' %}" id="editbtn"> Edit Profile</a></p><br><br><br>
+    {% for u in user %}
+    <p>UserName : {{ u.username}}</p><br>
+    <p>Name : {{ u.name}}</p><br>
+    <p>E-mail : {{ u.email}}</p><br>
+    <p>Class : {{ u.classTh}}</p><br>
+    <p>Mobile No. : {{ u.mobileNo}}</p><br>
+    <p>Test Attempted : {{ u.test_attempted}}</p><br>
+    <p>Points : {{ u.points}}</p><br>
+    {% endfor %}
+
+</div>
+
+
+{% endblock %}

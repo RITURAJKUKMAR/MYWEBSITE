@@ -1,0 +1,60 @@
+{% extends 'master.html' %}
+
+{% block menu %}
+<a href="{% url 'GWG:home' %}">Home</a>
+<a href="{% url 'GWG:logout' %}">Logout</a>
+<div>
+    <a href="{% url 'GWG:profile' %}">Hi<div class="profile">{{request.session.firstLetter | upper}}</div></a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="form">
+    <h1>{{ request.session.name | upper}}, edit your profile. </h1><br>
+    {% for u in user %}
+    <form action="{% url 'GWG:editProfile' %}" method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td><label for="#username">UserName :</label></td>
+                <td><input type="text" name="username" id="username" value='{{ u.username}}' required></td>
+            </tr>
+            <tr>
+                <td><label for="#password">Password :</label></td>
+                <td><input type="password" name="password" id="password" value="{{u.password}}" required></td>
+            </tr>
+            <tr>
+                <td><label for="#name">Name :</label></td>
+                <td><input type="text" name="name" id="name" value="{{u.name}}" required></td>
+            </tr>
+            <tr>
+                <td><label for="#classTh">Class :</label></td>
+                <td><input type="number" name="classTh" id="classTh" value="{{u.classTh}}" required></td>
+            </tr>
+            <tr>
+                <td><label for="#email">Email :</label></td>
+                <td><input type="email" name="email" value="{{u.email}}" id="email"></td>
+            </tr>
+
+            <tr>
+                <td><label for="#mobile">Monile No. :</label></td>
+                <td><input type="mobile" name="mobile" value="{{u.mobileNo}}" id="mobile"></td>
+            </tr>
+
+            <tr>
+                <td><input type="reset" value="RESET"></td>
+                <td><input type="submit" value="Save"></td>
+            </tr>
+            <div class="none" style="display: none;">
+                <input type="number" name="test_attempted" id="" value="{{u.test_attempted}}">
+                <input type="number" name="points" id="" value="{{u.points}}">
+            </div>
+        </table>
+    </form>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
